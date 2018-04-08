@@ -1,18 +1,19 @@
-{% extends 'user_layout.html' %}
 
-{% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='node_modules/quill/dist/quill.snow.css')}}"/>
-<link rel="stylesheet" href="{{url_for( 'static', filename='bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" />
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    {% block stylesheets %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='node_modules/quill/dist/quill.snow.css')}}"/>
+      <link rel="stylesheet" href="{{url_for( 'static', filename='bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" />
+    {% endblock%}
+</head>
 
-{% block scripts %}
-    <script type="text/javascript" src="{{url_for( 'static', filename='js/home.js') }}"></script>
-    <script type="text/javascript" src="{{url_for( 'static', filename='bower_components/moment/min/moment.min.js') }}"></script>
-    <script type="text/javascript" src="{{url_for( 'static', filename='bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
-{% endblock %}
-
-{% block panel_body %}
+<body>
 <nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -48,4 +49,27 @@
 <h1> I am the main content </h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem sint assumenda quae aliquid voluptatibus quia, ea, ad natus magni repellat earum, culpa iure tempore. Enim dolor eaque minima voluptas ducimus?</p>
 </div>
-{% endblock %}
+</body>
+
+
+{%block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for( 'static', filename='js/home.js') }}"></script>
+    <script type="text/javascript" src="{{url_for( 'static', filename='bower_components/moment/min/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{url_for( 'static', filename='bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+{% endblock%}
+</html>
+
+<!--
+<div class="panel panel-default">
+    <div class="panel-body">
+        {% block panel_body %}
+
+        {% endblock %}
+    </div>
+    <div class="panel-footer" style="text-align:center;background-color: #ffffff">
+        <b>coolspots</b> | 2018
+    </div>
+ </div>
+-->
