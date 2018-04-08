@@ -37,40 +37,78 @@
   <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
   <ul class="navbar-primary-menu">
     <li>
-      <a onclick="#"><span class="glyphicon glyphicon-cutlery"></span><span class="nav-label">Restaurants</span></a>
-      <a onclick="#"><span class="glyphicon glyphicon-map-marker"></span><span class="nav-label">Parks</span></a>
-      <a onclick="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Hotels</span></a>
-      <a onclick="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Coffee Shops</span></a>
-      <a onclick="#"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">🔥 Hot Spots</span></a>
+      <a id="restaurant_btn"><span class="glyphicon glyphicon-cutlery"></span><span class="nav-label">Restaurants</span></a>
+      <a id="parks_btn"><span class="glyphicon glyphicon-map-marker"></span><span class="nav-label">Parks</span></a>
+      <a id="hotels_btn"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Hotels</span></a>
+      <a id="coffee_btn"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Coffee Shops</span></a>
+      <a id="hot_spots_btn"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">🔥 Hot Spots</span></a>
     </li>
   </ul>
 </nav>
 <div class="main-content">
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="favorite_panel">
     <div class="panel-heading">
-      <h1>Favorites</h1>
+      <h1 id="favorite_lbl">Favorite Restaurants</h1>
     </div>
-    <div class="panel-body">
+    <div id="favorite_panel_body" class="panel-body">
       <!- format bullet points here -->
     </div>
   </div>
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="recent_panel">
     <div class="panel-heading">
-      <h1>Recent Spots</h1>
+      <h1 id="recent_lbl">Recent Restaurants</h1>
     </div>
-    <div class="panel-body">
+    <div id="recent_panel_body" class="panel-body">
       <!- format bullet points here -->
     </div>
   </div>
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="poll_panel">
     <div class="panel-heading">
       <h1>Send a poll</h1>
     </div>
-    <div class="panel-body">
-      <!- format bullet points here -->
+    <div id="poll_panel_body" class="panel-body">
+        <div class="col-md-4">
+            <table id="friend_table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gerardo</td>
+                        <td><span class="glyphicon glyphicon-plus"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Mayra</td>
+                        <td><span class="glyphicon glyphicon-plus"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <label id="poll_date_lbl">When do you want to eat?</label>
+                <div class="input-group date" id="t_due_date_calendar">
+                    <input type="text" class="form-control" id="t_due_date">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label id="location_lbl">Where do you want to eat?</label>
+                <input type="text" class="form-control" placeholder="Enter a zip code or city...">
+            </div>
+            <div class="form-group">
+                <label id="max_radius_lbl">What's the maximum radius (mi) of travel from selected location?</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
     </div>
+      <div class="panel-footer">
+          <button type="button" class="btn btn-primary btn-block">Submit</button>
+      </div>
   </div>
-<p> sample text sample text sample text sample text sample text sample text sample text sample text sample text samp</p>
 </div>
 </body>
 
@@ -83,16 +121,3 @@
     <script type="text/javascript" src="{{url_for( 'static', filename='bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
 {% endblock%}
 </html>
-
-<!--
-<div class="panel panel-default">
-    <div class="panel-body">
-        {% block panel_body %}
-
-        {% endblock %}
-    </div>
-    <div class="panel-footer" style="text-align:center;background-color: #ffffff">
-        <b>coolspots</b> | 2018
-    </div>
- </div>
--->

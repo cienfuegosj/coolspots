@@ -34,7 +34,57 @@ $(function () {
   });
 });
 
+$(document).ready(function() {
+    $('.btn-expand-collapse').click(function(e) {
+    $("#favorite_panel").show();
+        $("#recent_panel").show();
+        $("#poll_panel").show();
+	    $('.navbar-primary').toggleClass('collapsed');
+    });
 
-$('.btn-expand-collapse').click(function(e) {
-				$('.navbar-primary').toggleClass('collapsed');
+    $('#restaurant_btn').click(function(e) {
+        $("#favorite_panel").show();
+        $("#recent_panel").show();
+        $("#poll_panel").show();
+        $('#favorite_lbl').text("Favorite Restaurants");
+        $('#recent_lbl').text("Recent Restaurants");
+        $("#poll_date_lbl").text("When do you want to eat?")
+        $("#location_lbl").text("Where do you want to eat?")
+    });
+
+    $('#parks_btn').click(function(e) {
+        $("#favorite_panel").show();
+        $("#recent_panel").show();
+        $("#poll_panel").show();
+        $('#favorite_lbl').text("Favorite Parks");
+        $('#recent_lbl').text("Recent Parks");
+        $("#poll_date_lbl").text("When do you want to visit the park?")
+        $("#location_lbl").text("Where do you want to visit the park?")
+    });
+    $('#hotels_btn').click(function(e) {
+        $("#favorite_panel").show();
+        $("#recent_panel").show();
+        $("#poll_panel").show();
+        $('#favorite_lbl').text("Favorite Hotels");
+        $('#recent_lbl').text("Recent Hotels");
+        $("#poll_date_lbl").text("When do you plan to stay?")
+        $("#location_lbl").text("Where do you want to stay?")
+    });
+    $('#coffee_btn').click(function(e) {
+        $("#favorite_panel").show();
+        $("#recent_panel").show();
+        $("#poll_panel").show();
+        $('#favorite_lbl').text("Favorite Coffee Shops");
+        $('#recent_lbl').text("Recent Coffee Shops");
+        $("#poll_date_lbl").text("When do you want to drink coffee?")
+        $("#location_lbl").text("Where do you want to drink coffee?")
+    });
+    $('#hot_spots_btn').click(function(e) {
+        $("#favorite_panel").show();
+        $("#recent_panel").show();
+        $("#poll_panel").show();
+        $("#favorite_panel").hide();
+        $("#recent_panel").hide();
+        $("#poll_panel").hide();
+    });
 });
