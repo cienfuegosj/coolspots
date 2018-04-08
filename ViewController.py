@@ -27,13 +27,23 @@ login_manager.init_app(app)
 @app.route("/", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        return render_template("login.html", title="Home | coolspots", active="home", loginFailed=True)
+        return render_template("login.html", title="Login | coolspots", active="home", loginFailed=False)
     else:
-        pass
+        email = request.form['email']
+        password = request.form['password']
+        user_collection = mongo.db.users.find({"email":email}, {"password":password})
+
+        # if user_collection == 1:
+        #     user = User(user_collection["_id"], email, password)
+        #     login_user(user)
+        #     return redirect(url_for('home', userid=user_collection["_id"]))
+        # else:
+        #     return render_template("login.html", title="Login | coolspots", active="home", loginFailed=True)
+
 
 @login_required
-@app.route("/home", methods=["GET"])
-def home():
+@app.route("/home/<userid>", methods=["GET"])
+def home(userid):
     return render_template("home.html", title="Home | coolspots", current_type="Restaurants")
 
 
@@ -77,7 +87,7 @@ def load_user(user_id):
 @login_required
 def logout():
     logout_user()
-    redirect(url_for(login))
+    redirect(url_for('login'))
 
 
 if __name__ == '__main__':

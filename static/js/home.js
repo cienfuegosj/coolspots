@@ -80,9 +80,6 @@ $(document).ready(function() {
         $("#location_lbl").text("Where do you want to drink coffee?")
     });
     $('#hot_spots_btn').click(function(e) {
-        $("#favorite_panel").show();
-        $("#recent_panel").show();
-        $("#poll_panel").show();
         $("#favorite_panel").hide();
         $("#recent_panel").hide();
         $("#poll_panel").hide();
