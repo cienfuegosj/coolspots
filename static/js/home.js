@@ -86,5 +86,13 @@ $(document).ready(function() {
         $("#favorite_panel").hide();
         $("#recent_panel").hide();
         $("#poll_panel").hide();
+        $(".main-content").append("<div id='googleMap'></div>");
+        var mapProp= {
+        center:new google.maps.LatLng(51.508742,-0.120850),
+        zoom:5,};
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+};
+
+        //using jquery, create a panel that display google map (div tag)
     });
 });
