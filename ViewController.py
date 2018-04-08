@@ -30,18 +30,23 @@ app.config.update(
 @app.route("/", methods=["GET", "POST"])
 def login():
 
-    return render_template("login.html", title="Home | Organizer", active="home", loginFailed=True)
+    return render_template("login.html", title="Home | coolspots", active="home", loginFailed=True)
+
+
+@app.route("/home", methods=["GET"])
+def home():
+    return render_template("home.html", title="Home | coolspots")
 
 
 @app.route("/about", methods=["GET"])
 def about():
-    return render_template("about.html", title="About | Organizer")
+    return render_template("about.html", title="About | coolspots")
 
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "GET":
-        return render_template("contact.html", title="Contact | Organizer")
+        return render_template("contact.html", title="Contact | coolspots")
     else:
         # Do any email contact things here
         pass
