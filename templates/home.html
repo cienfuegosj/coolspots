@@ -39,7 +39,7 @@
     <li>
       <a id="restaurant_btn"><span class="glyphicon glyphicon-cutlery"></span><span class="nav-label">Restaurants</span></a>
       <a id="parks_btn"><span class="glyphicon glyphicon-map-marker"></span><span class="nav-label">Parks</span></a>
-      <a id="hotels_btn"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Hotels</span></a>
+      <a id="hotels_btn"><span class="glyphicon glyphicon-bed"></span><span class="nav-label">Hotels</span></a>
       <a id="coffee_btn"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Coffee Shops</span></a>
       <a id="hot_spots_btn"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">🔥 Hot Spots</span></a>
     </li>
@@ -119,5 +119,7 @@
     <script type="text/javascript" src="{{url_for( 'static', filename='js/home.js') }}"></script>
     <script type="text/javascript" src="{{url_for( 'static', filename='bower_components/moment/min/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{url_for( 'static', filename='bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDchda1zgCLkP69B9IREe8lTyWGcoO7cyk&callback=initMap" async defer></script>
+
 {% endblock%}
 </html>
