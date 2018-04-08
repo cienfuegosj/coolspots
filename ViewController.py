@@ -26,10 +26,8 @@ app.config.update(
     MAIL_PASSWORD = 'Promagic1'
     )
 
-
 @app.route("/", methods=["GET", "POST"])
 def login():
-
     return render_template("login.html", title="Home | coolspots", active="home", loginFailed=True)
 
 
@@ -50,6 +48,26 @@ def contact():
     else:
         # Do any email contact things here
         pass
+
+
+@app.route("/home/<id>/<type>/favorites")
+def favorite_search(id, type):
+    # Query the database for user's top five based on type
+    pass
+
+
+@app.route("/home/<id>/recents")
+def recent_search(id, type):
+    # Query the database for user's recent five based on type
+    pass
+
+
+@app.route("/home/<id>/current_polls")
+def current_polls(id, type):
+    # Query the database for user's current_polls
+    pass
+
+
 
 if __name__ == '__main__':
     app.run(debug=True,port=7171)
