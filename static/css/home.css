@@ -1,6 +1,5 @@
-tbody { cursor: pointer; }
 .navbar-global {
-  background-color: red ;
+  background-color: pink ;
 }
 .navbar-global .navbar-brand {
   color: white;
